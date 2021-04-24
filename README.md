@@ -7,12 +7,12 @@
   Note Taker application that uses an Express.js back end.
 
 ## Table of Contents
-  * [User Story](#userstory)
+  * [User-Story](#user-story)
   * [Usage](#usage)
   * [Links](#links)
   * [Questions](#questions)
 
-## User Story
+## User-Story
 
 ```
 AS A small business owner
