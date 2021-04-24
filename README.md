@@ -6,6 +6,12 @@
 
   Note Taker application that uses an Express.js back end.
 
+## Table of Contents
+  * [User Story](#userstory)
+  * [Usage](#usage)
+  * [Links](#links)
+  * [Questions](#questions)
+
 ## User Story
 
 ```
