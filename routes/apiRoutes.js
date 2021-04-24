@@ -1,11 +1,11 @@
 const db = require("../db/db.json");
 const fs = require("fs");
-const {v4: uuidv4} = require("uuid")
+const {v4: uuid} = require("uuid")
 
 module.exports = (app) => {
     let noteDb = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
 
-    app.get("/api/notes", (req, res) => res.JSON(noteDb));
+    app.get("/api/notes", (req, res) => res.json(noteDb));
 
     app.post("/api/notes", (req, res) => {
         let id = uuid();
@@ -14,7 +14,7 @@ module.exports = (app) => {
 
         noteDb.push(newNote);
         fs.writeFile("./db/db.json", JSON.stringify(noteDb), () => {
-            if (err) throw err;
+
         });
         console.log(noteDb);
 
@@ -23,7 +23,7 @@ module.exports = (app) => {
 
     app.delete("/api/notes/:id", (req, res) => {
         console.log(req.params.id);
-        noteDb = noteDb.filer( (note) => {
+        noteDb = noteDb.filter( (note) => {
             return note.id != req.params.id;
         });
         fs.writeFile("./db/db.json", JSON.stringify(noteDb), () => {
